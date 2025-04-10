@@ -38,6 +38,17 @@
     margin-bottom: 25px;
 }
 
+form{
+    input{
+        text-align: center;
+        width: 175px;
+    }
+
+    button{
+        width: 180px;
+    }
+}
+
 a{
     color: black;
     text-decoration: none;

@@ -1,8 +1,9 @@
 import { FreshContext, Handlers } from "$fresh/server.ts";
+import { featuredBooks } from "../books.ts";
 
 export const handler: Handlers = {
-  GET: async(_req: Request, ctx: FreshContext) => {
-    //
+  GET: async(_req: Request, ctx: FreshContext<unknown>) => {
+    const libros = featuredBooks;
 
     return ctx.render();
   }
@@ -10,8 +11,8 @@ export const handler: Handlers = {
 
 const Page = () => {
   return(
-    <>
-    </>
+    <div class="grid">
+    </div>
   );
 }
 
