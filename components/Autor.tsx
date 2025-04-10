@@ -4,13 +4,13 @@ import { Filtrar_Libros, Filtrar_Libros2 } from "../utils.ts";
 
 type Data = {
     author: Author;
-    //books: Books;
-    books: Book_1[];
+    books: Books;
+    //books: Book_1[];
 }
 
 const Book: FunctionalComponent<Data> = (props) => {
     const author = props.author;
-    const books_filtrados = Filtrar_Libros2(props.books);
+    const books_filtrados = Filtrar_Libros(props.books);
     
     //console.log(author)
 
@@ -33,7 +33,7 @@ const Book: FunctionalComponent<Data> = (props) => {
             <div>
                 <ul>
                     <ul>
-                        {books_filtrados.map((b) => {
+                        {books_filtrados.entries.map((b) => {
                             const key = b.key.replace("/works/", "");
                             return (
                                 <li key={b.key}>

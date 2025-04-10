@@ -26,8 +26,8 @@ const Book: FunctionalComponent<Data> = (props) => {
                         <h2 class="en_linea">Descripción: <span class="sin_resaltar">{book.description}</span></h2>
                     </li>
                     <li>
-                        <h2 class="en_linea">Autor: 
-                            <a href={`/author/${author}`} class="sin_resaltar">{author}</a>
+                        <h2 class="en_linea">Enlace a la página del autor: 
+                            <a href={`/author/${author}`} class="sin_resaltar"> {author}</a>
                         </h2>
                     </li>
                     <li>

@@ -5,8 +5,8 @@ import { Author, Book_1, Books } from "../../types.ts"
 
 type Data = {
     author: Author;
-    //books: Books;
-    books: Book_1[];
+    books: Books;
+    //books: Book_1[];
 }
 
 export const handler:Handlers = {
@@ -14,8 +14,8 @@ export const handler:Handlers = {
       const {id} = ctx.params;
         try{
           const response = await Axios.get<Author>(`https:openlibrary.org/authors/${id}.json`);
-          //const response2 = await Axios.get<Books>(`https:openlibrary.org/authors/${id}/works.json`);
-          const response2 = await Axios.get<Book_1[]>(`https://openlibrary.org/authors/${id}/works.json`);
+          const response2 = await Axios.get<Books>(`https:openlibrary.org/authors/${id}/works.json`);
+          //const response2 = await Axios.get<Book_1[]>(`https://openlibrary.org/authors/${id}/works.json`);
           
           return ctx.render({author: response.data, books: response2.data});
         }catch(e){
