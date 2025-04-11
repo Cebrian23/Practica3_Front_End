@@ -11,8 +11,6 @@ type Data = {
 const Book: FunctionalComponent<Data> = (props) => {
     const author = props.author;
     const books_filtrados = Filtrar_Libros2(props.books);
-    
-    //console.log(author)
 
     return (
         <div>

@@ -12,9 +12,10 @@
 
 .grid{
     display: grid;
-    grid-template-columns: 475px 475px 475px;
-    grid-column-gap: 50px;
+    grid-template-columns: 480px 480px 480px;
+    grid-column-gap: 25px;
     grid-row-gap: 25px;
+    margin-top: 25px;
 }
 
 .tarjeta{
@@ -43,7 +44,6 @@
     justify-content: center;
     align-items: center;
     margin-top: 50px;
-    margin-bottom: 25px;
 }
 
 form{

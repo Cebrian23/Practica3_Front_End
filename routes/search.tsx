@@ -21,7 +21,6 @@ export const handler:Handlers = {
 
     try{
       const response = await Axios.get<Data>(`https://openlibrary.org/search.json?q=${book}`);
-      //console.log(response.data);
       return ctx.render({docs: response.data.docs, enviado: true});
     }
     catch(e){
@@ -31,7 +30,6 @@ export const handler:Handlers = {
 }
 
 const Page = (props: PageProps<Data>) => {
-    console.log(props.data);
     const books = props.data.docs;
     const error = props.data.error;
     const enviado = props.data.enviado;

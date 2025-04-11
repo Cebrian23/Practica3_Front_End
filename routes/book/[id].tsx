@@ -12,7 +12,6 @@ export const handler:Handlers = {
       const {id} = ctx.params;
         try{
           const response = await Axios.get<Book_2>(`https:openlibrary.org/works/${id}.json`);
-          //console.log(response.data)
           return ctx.render({book: response.data});
         }catch(e){
           return new Response("Error en la API");
