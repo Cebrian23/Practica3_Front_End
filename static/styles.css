@@ -12,13 +12,21 @@
 
 .grid{
     display: grid;
-    grid-template-columns: 400px 400px 400px;
+    grid-template-columns: 475px 475px 475px;
     grid-column-gap: 50px;
     grid-row-gap: 25px;
 }
 
 .tarjeta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border: 1px solid;
+}
+
+.tarjeta:hover{
+    background-color: grey;
 }
 
 .en_linea{

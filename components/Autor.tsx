@@ -39,18 +39,3 @@ const Book: FunctionalComponent<Data> = (props) => {
 }
 
 export default Book;
-
-/*
-<ul>
-                    <ul>
-                        {books_filtrados.map((b) => {
-                            const key = b.key.replace("/works/", "");
-                            return (
-                                <li key={b.key}>
-                                    <a href={`/book/${key}`}>{b.title}</a>
-                                </li>
-                            );
-                        })}
-                    </ul>
-                </ul>
-*/

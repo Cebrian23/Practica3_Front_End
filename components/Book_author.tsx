@@ -15,7 +15,7 @@ const Book_author: FunctionalComponent<Data> = (props) => {
                 return (
                     <div key={key} class="tarjeta">
                         <h1>{b.title}</h1>
-                        <img src={`https://covers.openlibrary.org/b/id/${b.cover_i}-L.jpg`}/>
+                        <img src={`https://covers.openlibrary.org/b/id/${b.cover_i}-M.jpg`}/>
                         <div>
                             <div>
                                 <h2 class="en_linea">Más información:
