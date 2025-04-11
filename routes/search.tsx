@@ -1,15 +1,8 @@
 import { FreshContext, Handlers, PageProps } from "$fresh/server.ts";
-import Books from "../components/Books.tsx";
 import Form from "../components/Form.tsx";
 import Axios from "npm:axios";
 import { Book_1 } from "../types.ts";
-
-type Book = {
-  cover_i: string,
-  author_name: string,
-  title: string,
-  key:string,
-}
+import Book_search from "../components/Book_search.tsx";
 
 type Data = {
   docs?: Book_1[];
@@ -25,11 +18,13 @@ export const handler:Handlers = {
     if (!book) {
       return ctx.render({});
     }
+
     try{
       const response = await Axios.get<Data>(`https://openlibrary.org/search.json?q=${book}`);
       //console.log(response.data);
       return ctx.render({docs: response.data.docs, enviado: true});
-    }catch(e){
+    }
+    catch(e){
       return new Response("Error en la API");
     }
   }
@@ -44,7 +39,7 @@ const Page = (props: PageProps<Data>) => {
     return(
         <div>
            <Form/>
-           {books && enviado && <Books docs={books}/>}
+           {books && enviado && <Book_search docs={books}/>}
            {enviado && books?.length === 0 &&  <p class="centrar">No se ha encontrado ningún libro</p>}
            {error && error}
         </div>

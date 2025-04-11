@@ -9,7 +9,7 @@ const Book: FunctionalComponent<Data> = (props) => {
     const book = props.book;
     const author = book.authors[0].author.key.replace("/authors/", "");
 
-    console.log(book);
+    //console.log(book);
     
     if(book.covers){
         return(

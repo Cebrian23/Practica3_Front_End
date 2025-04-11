@@ -1,16 +1,16 @@
 import { FunctionalComponent } from "preact/src/index.d.ts";
-import { Author, Book_1, Books } from "../types.ts";
-import { Filtrar_Libros, Filtrar_Libros2 } from "../utils.ts";
+import { Author, Book_1, } from "../types.ts";
+import { Filtrar_Libros2 } from "../utils.ts";
+import Book_author from "./Book_author.tsx";
 
 type Data = {
     author: Author;
-    books: Books;
-    //books: Book_1[];
+    books: Book_1[];
 }
 
 const Book: FunctionalComponent<Data> = (props) => {
     const author = props.author;
-    const books_filtrados = Filtrar_Libros(props.books);
+    const books_filtrados = Filtrar_Libros2(props.books);
     
     //console.log(author)
 
@@ -31,9 +31,19 @@ const Book: FunctionalComponent<Data> = (props) => {
                 </ul>
             </div>
             <div>
-                <ul>
+                <Book_author docs={books_filtrados}/>
+            </div>
+            
+        </div>
+    );
+}
+
+export default Book;
+
+/*
+<ul>
                     <ul>
-                        {books_filtrados.entries.map((b) => {
+                        {books_filtrados.map((b) => {
                             const key = b.key.replace("/works/", "");
                             return (
                                 <li key={b.key}>
@@ -43,10 +53,4 @@ const Book: FunctionalComponent<Data> = (props) => {
                         })}
                     </ul>
                 </ul>
-                
-            </div>
-            
-        </div>
-    );
-}
-export default Book;
+*/

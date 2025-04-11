@@ -5,8 +5,9 @@ type Data = {
     docs: Book_1[];
 }
 
-const Books: FunctionalComponent<Data> = (props) => {
+const Book_search: FunctionalComponent<Data> = (props) => {
     const books = props.docs;
+    
     return(
         <div class="grid">
             {books.map((b) => {
@@ -33,4 +34,4 @@ const Books: FunctionalComponent<Data> = (props) => {
         </div>
     );
 }
-export default Books;
+export default Book_search;
